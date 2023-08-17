@@ -5,7 +5,7 @@ require 'securerandom'
 
 RSpec.describe SchemaRegistry do
   describe '#validate_event' do
-    subject { described_class.validate_event(data, 'billing.refund', version: 1) }
+    subject { described_class.validate_event(data, 'ates.user_created', version: 1) }
 
     let(:data) do
       {

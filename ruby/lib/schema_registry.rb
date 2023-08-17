@@ -8,7 +8,7 @@ require_relative 'schema_registry/validator'
 
 # Validates event schema
 #
-#   SchemaRegistry.validate_event(event_hash, 'order.refund')
+#   SchemaRegistry.validate_event(event_hash, 'order.user_created')
 #
 module SchemaRegistry
   # Method for validate event data by specific schema
