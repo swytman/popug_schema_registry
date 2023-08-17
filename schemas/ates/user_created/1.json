@@ -1,27 +1,56 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
 
-  "title": "User.Created.v1",
-  "description": "json schema for user created event (version 1)",
+  "title": "Task.Created.v1",
+  "description": "json schema for task created event (version 1)",
+
+  uuid: generate_uuid,
+  user_uuid: staff_user[:uuid],
+description: body['description'],
+title: body['title'],
+status: 'new',
+created_at: Time.now,
+assign_price:,
+resolve_price:
 
   "definitions": {
     "event_data": {
       "type": "object",
       "properties": {
-        "username": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
           "type": "string"
         },
         "uuid": {
           "type": "string"
         },
-        "role": {
+        "user_uuid": {
+          "type": "string"
+        },
+        "assign_price": {
+          "type": "integer"
+        },
+        "resolve_price": {
+          "type": "integer"
+        },
+        "created_at": {
           "type": "string"
         }
       },
       "required": [
-        "username",
+        "title",
+        "description",
+        "status",
         "uuid",
-        "role"
+        "user_uuid",
+        "assign_price",
+        "resolve_price",
+        "created_at"
       ]
     }
   },
